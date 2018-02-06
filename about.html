@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+<!-- Start Loading Animation CSS -->
+  <style>
+    .ij-spinner {
+      margin: 100px auto 0;
+      width: 70px;
+      text-align: center;
+    }
+
+    .ij-spinner > div {
+      width: 18px;
+      height: 18px;
+      background-color: #656565;
+
+      border-radius: 100%;
+      display: inline-block;
+      -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+      animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    }
+
+    .ij-spinner .ij-bounce1 {
+      -webkit-animation-delay: -0.32s;
+      animation-delay: -0.32s;
+    }
+
+    .ij-spinner .ij-bounce2 {
+      -webkit-animation-delay: -0.16s;
+      animation-delay: -0.16s;
+    }
+
+    @-webkit-keyframes sk-bouncedelay {
+      0%, 80%, 100% { -webkit-transform: scale(0) }
+      40% { -webkit-transform: scale(1.0) }
+    }
+
+    @keyframes sk-bouncedelay {
+      0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      } 40% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+      }
+    }
+  </style>
+<!-- End Loading Animation CSS -->
+
+<!-- Start Store Remote Page Content -->
+  <div style="display:none;" id="storage"><?php echo $data; ?></div>
+<!-- End Store Remote Page Content -->
+
+<!-- Start Load Select Page Content -->
+  <div style="display:none;" id="pageContents"></div>
+<!-- End Load Select Page Content -->
+
+<!-- Start Loading Animation HTML -->
+  <div id="loadingAnimation">
+      <div class="ij-spinner">
+        <div class="ij-bounce1"></div>
+        <div class="ij-bounce2"></div>
+        <div class="ij-bounce3"></div>
+      </div>
+  </div>
+<!-- End Loading Animation HTML -->
+
+<!-- ST PHP scraping -->
+  <!-- Start Recieve and Process PHP input -->
+  <script>
+    function loadData(data){  // calls the scraping function in the php file
+      document.getElementById("storage").innerHTML = data;
+
+        var elementsRemove = document.getElementsByClassName("ij-remove");
+        var len = elementsRemove.length;
+        var x;
+        for (x=0; x<len; x++){
+          console.log("remove elements triggered");
+          elementsRemove[x].innerHTML = "";
+        }
+
+        // Select Element Based on ID
+        var element1 = document.getElementById("50806");
+        var wrap1 = document.createElement('div');
+        wrap1.appendChild(element1.cloneNode(true));
+        element1.parentNode.removeChild(element1);
+
+        var txt = wrap1.innerHTML;
+        txt = txt.replace(/class="row"/g,"");
+
+        // Select Element Based on Class Name and Array Location
+        //var element2 = document.getElementsByClassName("article-content")[0];
+        //var wrap2 = document.createElement('div');
+        //wrap2.appendChild(element2.cloneNode(true));
+        //element2.parentNode.removeChild(element2);
+
+        // Clear Storage
+        document.getElementById("storage").innerHTML = "";
+
+        // Load Selected Elements
+        document.getElementById("pageContents").innerHTML = txt;
+        document.getElementById("loadingAnimation").innerHTML = "";
+        document.getElementById("loadingAnimation").style.display = "none";
+        document.getElementById("pageContents").style.display = "";
+
+      }
+  </script>
+  <!-- End Recieve and Process PHP input -->
+
+
+
+
+<!-- Z PHP scraping -->
+
+  <script src="/about.php"></script>
+</body>
+</html>
