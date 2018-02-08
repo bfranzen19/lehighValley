@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
-
 <!-- Start Loading Animation CSS -->
   <style>
     .ij-spinner {
@@ -69,22 +62,24 @@
   </div>
 <!-- End Loading Animation HTML -->
 
-<!-- ST PHP scraping -->
+<?php require 'about.php'; ?>
+
+
+
   <!-- Start Recieve and Process PHP input -->
   <script>
     function loadData(data){  // calls the scraping function in the php file
       document.getElementById("storage").innerHTML = data;
-
-        var elementsRemove = document.getElementsByClassName("ij-remove");
-        var len = elementsRemove.length;
-        var x;
-        for (x=0; x<len; x++){
-          console.log("remove elements triggered");
-          elementsRemove[x].innerHTML = "";
-        }
-
-        // Select Element Based on ID
-        var element1 = document.getElementById("50806");
+        // var elementsRemove = document.getElementsByClassName("remove");
+        // var len = elementsRemove.length;
+        // var x;
+        // for (x=0; x<len; x++){
+        //   console.log("remove elements triggered");
+        //   elementsRemove[x].innerHTML = "";
+        // }
+        //
+        // // Select Element Based on ID
+        // var element1 = document.getElementById("content-middle");
         var wrap1 = document.createElement('div');
         wrap1.appendChild(element1.cloneNode(true));
         element1.parentNode.removeChild(element1);
@@ -102,20 +97,17 @@
         document.getElementById("storage").innerHTML = "";
 
         // Load Selected Elements
+        // document.getElementById("pageContents").innerHTML = data;
         document.getElementById("pageContents").innerHTML = txt;
         document.getElementById("loadingAnimation").innerHTML = "";
         document.getElementById("loadingAnimation").style.display = "none";
         document.getElementById("pageContents").style.display = "";
-
       }
   </script>
   <!-- End Recieve and Process PHP input -->
 
 
+<!-- links the php file -->
+<!-- <script><?php require 'about.php';?></script> -->
 
-
-<!-- Z PHP scraping -->
-
-  <script src="https://toolbox.injoyonline.com/remote/lehigh/about.php"></script>
-</body>
-</html>
+<script src="about.php"></script>
