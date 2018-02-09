@@ -46,38 +46,44 @@
 
 <!-- a little CSS -->
   <style>
+    h2 {
+      font-weight: bold;
+    }
 
     .module-wrapper {
       text-align: center;
-      margin: 0 1rem;
+      margin: 0 1.25rem;
     }
 
     .h3-big {
       display: none;
     }
 
-
-    /* figure out how to isolate the first instance of this p */
-    .one-col-width > a + p {
-      text-align: center;
+    .overlay-content {
+      display: none;
     }
 
-    ul > ul {
-      color: blue;
+    .one-col-width:first-of-type > a + p:first-of-type {
+      display: none;
+    }
+
+    ul:nth-child(2) > li {
+      list-style-type: square;
+      margin-left: 15%;
+      margin-top: 0.25rem;
     }
 
     ul > li {
       color: black;
       list-style-type: circle;
       text-align: justify;
-      margin: 0 10%;
+      margin: 1rem 10%;
     }
 
     p {
       text-align: justify;
       margin-top: 1rem;
     }
-
   </style>
 
 <!-- Start Store Remote Page Content -->
