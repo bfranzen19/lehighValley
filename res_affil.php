@@ -1,7 +1,7 @@
 <!-- i'm on the server -->
 <?php
 // URL to scrape
-  $url = "https://www.lvhn.org/about_us";
+  $url = "https://www.lvhn.org/about_us/affiliations_and_accreditations";
 
 // scraper
   $curl = curl_init($url);

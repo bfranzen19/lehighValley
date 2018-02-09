@@ -1,7 +1,7 @@
 <!-- i'm on the server -->
 <?php
 // URL to scrape
-  $url = "https://www.lvhn.org/conditions_treatments/womens_health/pregnancy/learn_about_pregnancy";
+  $url = "https://www.lvhn.org/about_us/awards_and_recognition";
 
 // scraper
   $curl = curl_init($url);
@@ -15,7 +15,7 @@
   // $data = str_replace('" == $0', "", $data);
 
 // break scripts
-  $data = strip_tags($data, "<span><a><strong><script><img><b><p><br><hr><h1><h2><h3><div><ul><li><section><article>");
+  $data = strip_tags($data, "<a><strong><script><img><b><p><br><hr><h1><h2><h3><div><ul><li><section><article>");
     // strips all tags EXCEPT for tags listed to the right (second input). if it's removed from
     // the second input, it's going to be stripped.
 

@@ -1,28 +1,24 @@
 <?php
+// URL to scrape
+  $url = "https://news.lvhn.org/";
 
-// Load Remote Page Content
-$url = "https://www.lvhn.org/conditions_treatments/womens_health/pregnancy";
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HEADER, 0);
-$data = curl_exec($ch);
-curl_close($ch);
+// scraper
+  $curl = curl_init($url);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+  curl_setopt($curl, CURLOPT_HEADER, 0);
+  $data = curl_exec($curl);
 
-// Fix Pictures
-$data = str_replace('src="/','src="//www.northwell.com/',$data);
+  curl_close($curl);
 
-// Fix Links
-$data = str_replace('href="/','href="//www.northwell.com/',$data);
-
-// ID Script Tags
-$data = str_replace('<script','<script class="ij-remove" ',$data);
-
-// ID Style Tags
-$data = str_replace('<style','<style class="ij-remove" ',$data);
+  // $data = str_replace('"string(64553) "', "", $data);
+  // $data = str_replace('" == $0', "", $data);
 
 // break scripts
-$data = strip_tags($data, "<b><p><br><hr><div><h1><h2><h3><ul><li><a><section>");
+  $data = strip_tags($data, "<a><strong><script><img><b><p><br><hr><h1><h2><h3><div><ul><li><section><article>");
+    // strips all tags EXCEPT for tags listed to the right (second input). if it's removed from
+    // the second input, it's going to be stripped.
 
-echo "loadData(".json_encode($data).")";
+  echo "loadData(".json_encode($data).")";
 
+// z php
 ?>
