@@ -44,6 +44,42 @@
   </style>
 <!-- End Loading Animation CSS -->
 
+<!-- a little CSS -->
+  <style>
+
+    .module-wrapper {
+      text-align: center;
+      margin: 0 1rem;
+    }
+
+    .h3-big {
+      display: none;
+    }
+
+
+    /* figure out how to isolate the first instance of this p */
+    .one-col-width > a + p {
+      text-align: center;
+    }
+
+    ul > ul {
+      color: blue;
+    }
+
+    ul > li {
+      color: black;
+      list-style-type: circle;
+      text-align: justify;
+      margin: 0 10%;
+    }
+
+    p {
+      text-align: justify;
+      margin-top: 1rem;
+    }
+
+  </style>
+
 <!-- Start Store Remote Page Content -->
   <div style="display:none;" id="storage"><?php echo $data; ?></div>
 <!-- End Store Remote Page Content -->
@@ -62,7 +98,6 @@
   </div>
 <!-- End Loading Animation HTML -->
 
-<?php require 'about.php'; ?>
 
 
 
@@ -70,16 +105,16 @@
   <script>
     function loadData(data){  // calls the scraping function in the php file
       document.getElementById("storage").innerHTML = data;
-        // var elementsRemove = document.getElementsByClassName("remove");
+        // var elementsRemove = document.getElementsById("remove");
         // var len = elementsRemove.length;
         // var x;
         // for (x=0; x<len; x++){
         //   console.log("remove elements triggered");
         //   elementsRemove[x].innerHTML = "";
         // }
-        //
-        // // Select Element Based on ID
-        // var element1 = document.getElementById("content-middle");
+
+        // Select Element Based on ID
+        var element1 = document.getElementById("content-middle");
         var wrap1 = document.createElement('div');
         wrap1.appendChild(element1.cloneNode(true));
         element1.parentNode.removeChild(element1);
@@ -108,6 +143,4 @@
 
 
 <!-- links the php file -->
-<!-- <script><?php require 'about.php';?></script> -->
-
-<script src="about.php"></script>
+<script src="https://toolbox.injoyonline.com/remote/lehigh/about.php"></script>
