@@ -1,0 +1,33 @@
+a {
+  color: #0574af;
+}
+
+a:hover {
+  color: #577a28;
+}
+
+h2 {
+  text-shadow: 1px 1px 1px gray;
+}
+
+h3 {
+  text-shadow: 1px 1px 1px gray;
+}
+
+.module-wrapper h3 {
+  text-shadow: none;
+  font-weight: 400;
+}
+
+/*a::after {*/
+/*  content: '\0020';*/
+/*}*/
+
+/* theme settings:
+font and header font: open sans
+
+theme color: #00529b
+secondary color: #0574af
+link color: #8ec641
+
+resources enabled? yes */

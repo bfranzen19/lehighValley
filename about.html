@@ -66,8 +66,14 @@
 
 <!-- ST A LITTLE STYLE -->
   <style>
-    h2 {
-      font-weight: bold;
+    ul > ul > li > a:first-of-type::after {
+      /*background-color: blue;*/
+      content: '\0020';
+    }
+
+    strong {
+      font-style: italic;
+      font-weight: 400;
     }
 
     .module-wrapper {
