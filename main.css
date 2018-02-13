@@ -30,4 +30,28 @@ theme color: #00529b
 secondary color: #0574af
 link color: #8ec641
 
-resources enabled? yes */
+resources enabled? yes
+
+index links:
+https://www.injoyonline.com/learn/course/services-information-lehigh-valley-lehigh-valley-health-network/organization-details/department-of-obstetrics
+
+https://www.injoyonline.com/learn/course/services-information-lehigh-valley-lehigh-valley-health-network/organization-details/department-of-obstetrics?page=2
+
+https://www.injoyonline.com/learn/course/services-information-lehigh-valley-lehigh-valley-health-network/organization-details/department-of-obstetrics?page=3
+
+https://www.injoyonline.com/learn/course/services-information-lehigh-valley-lehigh-valley-health-network/organization-details/department-of-obstetrics?page=4
+
+https://www.injoyonline.com/learn/course/services-information-lehigh-valley-lehigh-valley-health-network/organization-details/department-of-obstetrics?page=5
+
+https://www.injoyonline.com/learn/course/services-information-lehigh-valley-lehigh-valley-health-network/organization-details/department-of-obstetrics?page=6
+
+
+<!-- BACK TO INDEX BUTTON -->
+    <a style="float:right;" class="ember-view btn btn--link btn--small ij-index-link" href="https://www.injoyonline.com/learn/course/services-information-lehigh-valley-lehigh-valley-health-network/index/index">
+      <i class="icon-upleft" aria-label="back"></i>
+        <span>Back to Index</span>
+    </a>
+<!-- BACK TO INDEX BUTTON -->
+
+
+*/
