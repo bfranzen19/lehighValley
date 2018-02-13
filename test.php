@@ -1,8 +1,8 @@
 <?php
 // URL to scrape
-  $url = "https://news.lvhn.org/";
+  $url = "https://www.lvhn.org/about_us";
 
-// scraper
+// SCRAPER
   $curl = curl_init($url);
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
   curl_setopt($curl, CURLOPT_HEADER, 0);
@@ -10,15 +10,14 @@
 
   curl_close($curl);
 
-  // $data = str_replace('"string(64553) "', "", $data);
+// CHANGE PROBLEMATIC STRINGS
   // $data = str_replace('" == $0', "", $data);
 
-// break scripts
+// BREAK SCRIPTS
+// strips all tags EXCEPT for tags listed to the right (second input). if it's removed from
+// the second input, it's going to be stripped.
   $data = strip_tags($data, "<a><strong><script><img><b><p><br><hr><h1><h2><h3><div><ul><li><section><article>");
-    // strips all tags EXCEPT for tags listed to the right (second input). if it's removed from
-    // the second input, it's going to be stripped.
 
+// ECHO DATA TO JS SCRIPT IN HTML FILE
   echo "loadData(".json_encode($data).")";
-
-// z php
 ?>
