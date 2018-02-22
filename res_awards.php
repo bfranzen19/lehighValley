@@ -15,7 +15,7 @@
   // $data = str_replace('" == $0', "", $data);
 
 // break scripts
-  $data = strip_tags($data, "<a><strong><script><img><b><p><br><hr><h1><h2><h3><div><ul><li><section><article>");
+  $data = strip_tags($data, "<a><strong><img><b><p><br><hr><h1><h2><h3><div><ul><li><section><article>");
     // strips all tags EXCEPT for tags listed to the right (second input). if it's removed from
     // the second input, it's going to be stripped.
 
